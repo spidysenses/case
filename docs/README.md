@@ -25,3 +25,6 @@ The purpose of this repository is to provide a foundation for broader community 
 - [Raw Data](https://github.com/casework/case/tree/master/examples/raw_data.json)
 - [Reconstructed File](https://github.com/casework/case/tree/master/examples/reconstructed_file.json) (*[info](examples/reconstructed_file.md)*)
 - [SMS and Contacts](https://github.com/casework/case/tree/master/examples/sms_and_contacts.json)
+
+### Mappings
+- [CASE/UCO v0.1.0 implementation mapping index](mappings/mapping-index.md)
