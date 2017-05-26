@@ -1,0 +1,102 @@
+
+//CASE/UCO version of the IEP example given in Appendix A of the FIRST IEP Version 1.0 specification (https://www.first.org/iep#appendix-a)
+//IEPMarking type would simply be defined as an extension of the MarkingModel class in UCO
+{
+  "@id": "marking-01bc4353­4829­4d55­8d52­0ab7e0790df9",
+  "@type": "MarkingDefinition",
+  "name": "FIRST.org Mailing List IEP",
+  "definitionType": "IEPMarking",
+  "definition": [
+    {
+      "@type": "IEPMarking",
+      "version": 1,
+      "reference": "https://www.first.org/mailing­list­iep",
+      "start­-date": "2016-­06-­09 10:09:00",
+      "end­-date": "2016-­12-­31 10:09:00",
+      "encrypt­-in-­transit": "MAY",
+      "encrypt­-at-­rest": "MAY",
+      "permitted-­actions": "EXTERNALLY VISIBLE DIRECT ACTIONS",
+      "affected­-party-­notifications": "MAY",
+      "tlp": "AMBER",
+      "attribution": "MUST NOT",
+      "obfuscate-­affected-­parties": "MUST",
+      "unmodified­-resale": "MUST NOT",
+      "external­-reference": "https://www.first.org/about/policies/bylaws"
+    }
+  ]
+},
+
+//Example of a single Trace object with a data marking asserted that applies to the entire Trace object
+{
+  "@id": "email-59e9cf76-08c3-4f0b-a319-2a3b55b54f03",
+  "@type": "Trace",
+  "objectMarking": ["marking-01bc435348294d558d520ab7e0790df9"],
+  "propertyBundle": [
+    {
+      "@type": "EmailMessage",
+      "to": ["EmailAccount-bb704188-de16-4743-92fc-b4cba6f9f464"],
+      "cc": ["EmailAccount-6c0e2c89-05c2-4713-8a2e-51126725c783"],
+      "bcc": ["EmailAccount-a41737ad-558c-44a4-8031-40c623b3f07b"],
+      "from": "EmailAccount-bcc67257-331c-4151-8818-1196eb91e7e0",
+      "subject": "Example email message",
+      "sender": "EmailAccount-bcc67257-331c-4151-8818-1196eb91e7e0",
+      "receivedTime": "2017-03-28T13:44:23.40Z",
+      "sentTime": "2017-03-28T13:44:22.19Z",
+      "messageID": "CAKBqNfyKo+ZXtkz6DUAHw6FjmsDjWDB-pvHkJy6kwO82jTbkNA@mail.gmail.com"
+    }
+  ]
+},
+
+//Example of a Bundle of CASE/UCO content with a data marking asserted that applies to the entire bundle including its content objects.
+{
+  "@id": "bundle-b0d719c0-db84-4a41-9026-9caf71a5720c",
+  "@type": "Bundle",
+  "objectMarking": ["marking-01bc4353­4829­4d55­8d52­0ab7e0790df9"],
+  "content": [
+    {
+      "@id": "phoneaccount-aba00444-9f1a-44f2-81ba-1be4f7a27314",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "Account",
+          "accountIssuer": "AT&T",
+          "isActive": true
+        },
+        {
+          "@type": "PhoneAccount",
+          "phoneNumber": "1237771337"
+        }
+      ]
+    },
+    {
+      "@id": "phoneaccount-6efe9553-bd61-486f-ae9e-5f9dfe613a7f",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "Account",
+          "accountIssuer": "Sprint",
+          "isActive": true
+        },
+        {
+          "@type": "PhoneAccount",
+          "identifier": "1234560000"
+        }
+      ]
+    },
+    {
+      "@id": "phonecall-5c76372a-5bce-4f73-8800-91691d8f0b57",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "PhoneCall",
+          "callType": "mobile",
+          "startTime": "2010-01-15T17:59:43.25Z",
+          "endTime": "2010-01-15T18:30:41.25Z",
+          "from": "phoneaccount-aba00444-9f1a-44f2-81ba-1be4f7a27314",
+          "to": "phoneaccount-6efe9553-bd61-486f-ae9e-5f9dfe613a7f",
+          "duration": "PT31M2S"
+        }
+      ]
+    }
+  ]
+}
