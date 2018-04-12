@@ -1,10 +1,13 @@
 # Cyber-investigation Analysis Standard Expression (CASE)
+<p>&nbsp;</p>
+<p align="center"><b><em>Visit <a href="https://github.com/ucoProject/CASE">CASE-UCO Repository Home</a> for current work on CASE.</em></b></p>
+<p>&nbsp;</p>
 
 [Experimental Draft Ontology (OWL)](https://github.com/casework/case/tree/master/case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/casework/case/releases)
 
 Cyber-investigation Analysis Standard Expression (CASE) is a community-developed standard format, which is intended to serve the needs of the broadest possible range of cyber-investigation domains, including digital forensic science, incident response, and counter-terrorism. 
 
-CASE is defined as a profile of the [Unified Cyber Ontology (UCO)](https://ucoproject.github.io/uco/). CASE leverages contextually relevant components of the UCO extending, constraining or renaming them as appropriate.
+CASE is defined as a profile of the [Unified Cyber Ontology (UCO)](https://github.com/ucoProject/). CASE leverages contextually relevant components of the UCO extending, constraining or renaming them as appropriate.
 
 CASE is specified at a semantic level and supports various serializations. The default serialization for CASE is JSON-LD.
 
